@@ -4,6 +4,7 @@ from grabscreen import grab_screen
 import os
 import cv2
 import numpy as np
+import pyautogui
 
 def getKey():
     key_list = ['A', 'W', 'S', 'D', 'K']
@@ -37,14 +38,17 @@ def key2output(keys):
     return k_output
 
 
-file_name = "C:\\Users\\gamef\\Desktop\\training_data.npy"
+file_name = "C:\\Users\\gamef\\Desktop\\training_data.npy_{}"
 
-if os.path.isfile(file_name):
-    print("file exists")
-    training_data = list(np.load(file_name))
-else:
-    print("creating new file")
-    training_data = []
+# if os.path.isfile(file_name):
+#     print("file exists")
+#     training_data = list(np.load(file_name))
+# else:
+#     print("creating new file")
+#     training_data = []
+
+training_data = []
+j = 1
 
 for i in range(4):
     print(i)
@@ -53,6 +57,7 @@ for i in range(4):
 paused = False
 while(True):
     if not paused:
+        pyautogui.typewrite('t')
         screen = grab_screen(region=(0, 40, 1024, 808))
         screen = cv2.resize(screen, (400, 225))
         screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
@@ -64,7 +69,9 @@ while(True):
             print(len(training_data))
 
         if len(training_data) % 500 == 0:
-            np.save(file_name, training_data)
+            np.save(file_name.format(j), training_data)
+            training_data = []
+            j= j+1
             print('Saved')
 
     keys = getKey()

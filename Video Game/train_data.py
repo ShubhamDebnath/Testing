@@ -11,11 +11,16 @@ model = alexnet2(WIDTH, HEIGHT, LR, output=4)
 
 #model.load(MODEL_NAME)
 
-data = np.load('training_data.npy')
+#data = np.load('training_data.npy')
+all_data = []
+for i in range(0,1):
+     data = np.load('C:\\Users\\gamef\\Desktop\\training_data.npy_{}.npy'.format(i))
+     for j in range(len(data)):
+             all_data.append([data[j][0], data[j][1]])
 
-np.random.shuffle(data)
-train = data[:-int(len(data)/2)]
-test = data[-int(len(data)/2):]
+np.random.shuffle(all_data)
+train = all_data[:-int(len(all_data)/2)]
+test = all_data[-int(len(all_data)/2):]
 
 X = np.array([i[0] for i in train]).reshape(-1, WIDTH, HEIGHT, 1)
 Y = [i[1] for i in train]
