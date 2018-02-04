@@ -23,7 +23,7 @@
 ###### python generate_tfrecord.py --csv_input=data/train_labels.csv --output_path=data/train.record
 ###### python generate_tfrecord.py --csv_input=data/test_labels.csv --output_path=data/test.record
 
-#### 5) Download a model of your choice from <a href =https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md >here</a> and also take its related config file from <a href = https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs>here</a>, keep both in object_detection folder. You need to make a few changes in the config file, or you can just take mine from training folder
+#### 5) Download a model of your choice from <a href =https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md >here</a> and also take its related config file from <a href = https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs>here</a>, keep both in object_detection folder. You need to make a few changes in the config file, or you can just take <a href=https://github.com/ShubhamDebnath/Testing/blob/master/Object%20Detection/training/ssd_mobilenet_v1_coco.config>mine</a> from training folder
 
 #### 6) Create a pbtext file an example of which is <a href = https://github.com/ShubhamDebnath/Testing/blob/master/Object%20Detection/training/duke_labels.pbtxt>this</a>, id referes to the label , start it with 1 , not 0
 
