@@ -24,7 +24,7 @@ num_games = 1000     # arbitrary number, not final
 possible_actions = env.action_space.n
 MODEL_NAME = 'data/Model_{}'
 gamma = 0.99
-epsilon = 0.7
+epsilon = 1
 generations = 10000	# arbitrary number, not final
 height = 84
 width = 84
@@ -44,11 +44,10 @@ def play4data(gen, epsilon):
         while not done:
 
             # env.render()
-
-            # if it's 0th generation, model hasn't been trained yet, so can't call predict funtion
+	
             # or if i want to take a random action based on some fixed epsilon value
             # or if it's in later gens , but doesn't have 4 frames yet , to send to model
-            if gen == 0 or len(prev_observation)==0 or np.random.rand() <= epsilon or len(d) < 4:
+            if len(prev_observation)==0 or np.random.rand() <= epsilon or len(d) < 4:
                 theta = np.random.randn(possible_actions)
             else:
                 theta = q_model.predict(np.array(d).reshape(-1, 4, height, width))[0]
