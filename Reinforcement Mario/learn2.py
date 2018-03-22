@@ -70,16 +70,15 @@ def play4data(gen, epsilon):
             # this one is just total score after each game
             score += reward
 
+	    # d is a queue of 4 frames that i pass as an input to the model
+            d.append(prev_observation)
+            if len(d) > 4:
+                d.popleft()
             
             if len(prev_observation) > 0 and len(d) == 4 :
                 training_data.append([d, action, reward, done])
 
             prev_observation = observation
-
-            # d is a queue of 4 frames that i pass as an input to the model
-            d.append(observation)
-            if len(d) > 4:
-                d.popleft()
 
             if done:
                 break
@@ -140,7 +139,7 @@ def train2play(training_data):
         else:
             targets[i, action[i]] = reward[i] + gamma * np.max(Q_sa)
 
-        print('targets {0} Q_sa {1}'.format(targets[i], Q_sa))
+#         print('targets {0} Q_sa {1}'.format(targets[i], Q_sa))
 
 	# X is the queue of 4 frames
     with graph2.as_default():
