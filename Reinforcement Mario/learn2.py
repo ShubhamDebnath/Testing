@@ -14,6 +14,10 @@ game = "BreakoutDeterministic-v4"
 env = gym.make(game)
 env.reset()
 
+def get_epsilon(epsilon, gen):
+    epsilon = epsilon
+    epsilon -= gen * 0.009
+    return epsilon
 
 LR = 1e-3
 num_games = 1000     # arbitrary number, not final
@@ -145,8 +149,10 @@ def train2play(training_data):
 # repeating the whole process in terms of generations
 # training again and again after playing for set number of games
 for gen in range(generations):
-
-    training_data =  play4data(gen)
+    
+    epsilon = get_epsilon(epsilon, gen)
+    
+    training_data =  play4data(gen, epsilon)
     train2play(training_data)
 
     with graph2.as_default():
