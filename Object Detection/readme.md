@@ -14,7 +14,7 @@
 ###### pyrcc4 -o resources.py resources.qrc
 ###### python labelImg.py
 
-#### 3) Create xml files for all your pictures and put them in test/train folders
+#### 3) Create xml files for all your pictures and put them in test/train folders using labelImg.py
 
 #### 4) Run these lines
 ###### python xml_to_csv.py
