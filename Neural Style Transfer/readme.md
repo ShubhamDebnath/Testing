@@ -31,3 +31,4 @@
 ![](images/louvre_small.jpg?raw=true)
 ![](output/monet/generated_image_monet.jpg?raw=true)
 ![](output/van_gogh/generated_image_van_gogh_louvre_small.jpg?raw=true)
+![](output/stone/generated_image_stone_louvre_small.jpg?raw=true)
