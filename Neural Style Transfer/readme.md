@@ -28,6 +28,6 @@
 ##### Output images will be saved in output folder under respestive folders of each style
 
 ### Sample Results
-![Actual Image](images/louvre.jpg)
-![Monet Poppies](output/monet/generated_image_monetjpg)
-![Van Gogh Starry Night](output/monet/generated_image_van_gogh.jpg)
+![](images/louvre_small.jpg?raw=true)
+![](output/monet/generated_image_monet.jpg?raw=true)
+![](output/van_gogh/generated_image_van_gogh_louvre_small.jpg?raw=true)
