@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--all", help="run for some predefined style images")
 parser.add_argument("--style", default = "composition", help="put name of style image you want to use without extension " )
 parser.add_argument("--content", default = "louvre_small", help="put name of content image you want to use without extension " )
-parser.add_argument("--video", default = "10seconds", help="put name of video to render")
+parser.add_argument("--video", default = None, help="put name of video to render")
 args = parser.parse_args()
 
 
