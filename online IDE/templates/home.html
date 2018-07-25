@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<h1> Test Page </h1>
+		<link rel="stylesheet" href="static/styles.css">
+	</head>
+	<body>
+
+		<form method = "POST">
+  				<input type = "submit" value = "c" name = "lang">
+  				<input type = "submit" value = "c++" name = "lang">
+  				<input type = "submit" value = "c#" name = "lang">
+  				<input type = "submit" value = "java" name = "lang">
+  				<input type = "submit" value = "javascript" name = "lang">
+  				<input type = "submit" value = "python3" name = "lang">
+		<!-- </form> -->
+
+		<br> test message 1 for {{choice }} </br>
+		<!-- <form method="POST"> -->
+			<textarea rows="20" cols="100" autofocus name = "code">{{default_code}}
+			</textarea>
+			<input type = "submit" name = "submit" value = "submit">
+			<textarea rows="20" cols="100" readonly name = "output_string">{{default_output}}
+			</textarea>
+			<p>StdIn</p>
+			<textarea rows="5" cols="50" name = "stdin_string">{{default_stdin}}</textarea>
+		</form>
+	</body>
+</html>
+
+<!-- <form method="POST">
+    <textarea rows="10" cols="50" autofocus name = "code">
+		enter code here
+	</textarea>
+    <input type="submit">
+</form> -->
